@@ -5,9 +5,9 @@ import { createAdmin } from "../../database/operations/admin";
 export default async function InitialAdmin(req:NextApiRequest, res:NextApiResponse) {
 
     const data:AdminData = {
-        username: "test",
-        email: "test",
-        password: "test"
+        username: "AudioT_Root",
+        email: "audiot.development@gmail.com",
+        password: process.env.ADMIN_ROOT_PASSWORD
     }
 
     await createAdmin(data)
