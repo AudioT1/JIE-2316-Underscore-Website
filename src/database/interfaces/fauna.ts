@@ -6,5 +6,7 @@ export interface S_Ref {
 }
 
 export interface C_Ref {
-    "@ref": string;
+    "@ref": {
+        id: string;
+    };
 }

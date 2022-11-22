@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { AdminData } from "../../database/interfaces/admin";
+import { AdminData } from "../../database/interfaces/Admin";
 import { createAdmin } from "../../database/operations/admin";
 import bcrypt from "bcryptjs"
 
