@@ -20,8 +20,16 @@ export async function incrementPageVisited(randomId:string, page:string) {
             {
                 user: getAnalyticsUserInnerQuery(randomId)
             },
-            q.Var("user")
-            // q.Update(q.Select("ref", q.Var("user")), null)
+            q.Update(q.Select("ref", q.Var("user")), {data: {
+                pageVisitFrequencies: {
+                    [page]: q.If(
+                        q.ContainsField(page, q.Select(["data", "pageVisitFrequencies"], q.Var("user"))),
+                        q.Add(q.Select(["data", "pageVisitFrequencies", page], q.Var("user")), 1),
+                        1
+                    ),
+                },
+                lastVisit: q.Now()
+            }})
         )
     )
 }
