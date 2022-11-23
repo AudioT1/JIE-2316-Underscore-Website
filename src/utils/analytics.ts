@@ -18,6 +18,6 @@ export async function useAnalytics(page:string) {
                 console.log((e as AxiosError)?.response)
             }
         }
-        setTimeout(() => incrementVisitToPage(), 3000)
+        incrementVisitToPage()
     }, [])
 }

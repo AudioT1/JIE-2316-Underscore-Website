@@ -7,6 +7,7 @@ function getAnalyticsUserInnerQuery(randomId:string) {
         q.Get(q.Match(q.Index("analyticsUsers_by_randomId"), randomId)),
         q.Create(q.Collection("analyticsUsers"), {data: {
             randomId,
+            lastVist: q.Now(),
             pageVisitFrequencies: {}
         }})
     )
