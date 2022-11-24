@@ -1,7 +1,6 @@
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import Head from "next/head";
-import { useEffect } from "react";
 import { useAnalytics } from "../utils/analytics";
+import Header from "../components/nav/Header"
 
 export default function Home() {
 
@@ -13,7 +12,10 @@ export default function Home() {
 				<title>AudioT</title>		
 			</Head>
 			<div>
-				main section
+				<Header />
+				<div>
+					main section
+				</div>
 			</div>
 		</>
 	)
