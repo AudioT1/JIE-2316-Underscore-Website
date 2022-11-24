@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import { ThemeProvider } from "@mui/material"
+import { ThemeProvider, CssBaseline } from "@mui/material"
 import createCache, { EmotionCache } from "@emotion/cache"
 import { CacheProvider } from "@emotion/react"
 import { theme } from "../styles/theme"
@@ -25,6 +25,7 @@ export default function MyApp({ Component, pageProps,
 	return (
 		<CacheProvider value={emotionCache}>
 			<ThemeProvider theme={theme}>
+				<CssBaseline />
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</CacheProvider>

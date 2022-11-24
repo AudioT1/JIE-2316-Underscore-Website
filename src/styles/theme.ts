@@ -19,7 +19,8 @@ export const theme = createTheme({
     palette: {
         mode: "light",
         primary: {
-            main: "#D2B49C"
+            main: "#ba8d69",
+            dark: "#a8764d"
         },
         error: {
             main: "#FF2414"
@@ -35,5 +36,12 @@ export const theme = createTheme({
         secondaryBg: {
             header: "#535040"
         } 
+    },
+    components: {
+        MuiTextField: {
+            defaultProps: {
+                variant: "standard",
+            }
+        },
     }
 })
