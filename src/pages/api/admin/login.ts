@@ -33,7 +33,11 @@ export default async function Login(req:NextApiRequest, res:NextApiResponse) {
             return res.status(409).json({field: "password", msg: "Incorrect password."})
         }
 
-        const token = jwt.sign({username}, process.env.JWT_TOKEN_SIGNATURE, {expiresIn: "48hr"})
+        const token = jwt.sign(
+            {username, email: admin.data.email}, 
+            process.env.JWT_TOKEN_SIGNATURE, 
+            {expiresIn: "48hr"}
+        )
 
         setCookie({res}, "admin-auth", token, {
             secure: process.env.NODE_ENV !== "development",

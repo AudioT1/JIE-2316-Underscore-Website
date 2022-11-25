@@ -6,6 +6,8 @@ export interface AdminData {
     password: string; 
 }
 
+export interface C_AdminData extends Omit<AdminData, "password"> {}
+
 export interface S_Admin {
     ref: S_Ref;
     data: AdminData;
@@ -13,5 +15,5 @@ export interface S_Admin {
 
 export interface C_Admin {
     ref: C_Ref;
-    data: AdminData;
+    data: C_AdminData;
 }
