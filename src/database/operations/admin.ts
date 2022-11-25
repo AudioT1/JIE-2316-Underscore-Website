@@ -10,3 +10,14 @@ export async function createAdmin(data:AdminData) {
 
     return admin
 }
+
+export async function getAdminFromUsername(username:string) {
+
+    return await client.query(
+        q.If(
+            q.Exists(q.Match(q.Index("admins_by_username"), username)),
+            q.Get(q.Match(q.Index("admins_by_username"), username)),
+            null
+        )
+    ) as S_Admin
+}
