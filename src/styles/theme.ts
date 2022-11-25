@@ -5,12 +5,14 @@ declare module "@mui/material/styles" {
     interface Palette {
         secondaryBg?: {
             header?: string;
+            green?: string;
         };
     }
 
     interface PaletteOptions {
         secondaryBg?: {
             header?: string;
+            green?: string;
         };
     }
 }
@@ -34,7 +36,8 @@ export const theme = createTheme({
             paper: "#E7E7E7"
         },
         secondaryBg: {
-            header: "#535040"
+            header: "#535040",
+            green: "#7E8772"
         } 
     },
     components: {

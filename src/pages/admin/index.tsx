@@ -2,6 +2,8 @@ import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { C_Admin } from "../../database/interfaces/Admin";
 import { getAdmin } from "../../utils/admin-auth";
+import styles from "../../styles/pages/HeaderSidebar.module.css"
+import AdminSidebar from "../../components/nav/AdminSidebar";
 
 interface Props {
     admin: C_Admin;
@@ -14,10 +16,12 @@ export default function Admin({admin}:Props) {
             <Head>
                 <title>Admin Dashboard</title>     
             </Head> 
-            <div>
-                hello world
+            <div className={styles.root}>
                 <div>
-                    {JSON.stringify(admin)}
+                </div>
+                <AdminSidebar />
+                <div>
+                    main
                 </div>
             </div>
         </>
