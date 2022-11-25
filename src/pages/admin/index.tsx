@@ -4,6 +4,7 @@ import { C_Admin } from "../../database/interfaces/Admin";
 import { getAdmin } from "../../utils/admin-auth";
 import styles from "../../styles/pages/HeaderSidebar.module.css"
 import AdminSidebar from "../../components/nav/AdminSidebar";
+import AdminHeader from "../../components/nav/AdminHeader";
 
 interface Props {
     admin: C_Admin;
@@ -17,8 +18,7 @@ export default function Admin({admin}:Props) {
                 <title>Admin Dashboard</title>     
             </Head> 
             <div className={styles.root}>
-                <div>
-                </div>
+                <AdminHeader />
                 <AdminSidebar />
                 <div>
                     main

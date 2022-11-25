@@ -1,4 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import {useTheme} from "@mui/material/styles"
 import Link from "next/link";
 
 const sections = [
@@ -8,6 +9,13 @@ const sections = [
 ]
 
 export default function AdminSidebar() {
+
+    const theme = useTheme()
+    const isAboveMinScreenSize = useMediaQuery(theme.breakpoints.up("md"))
+
+    if (!isAboveMinScreenSize) {
+        return <div />
+    }
 
     return (
         <Box height="100%" bgcolor="secondaryBg.green" minWidth={250}>
