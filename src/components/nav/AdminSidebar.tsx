@@ -2,7 +2,7 @@ import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import {useTheme} from "@mui/material/styles"
 import Link from "next/link";
 
-const sections = [
+export const sections = [
     {name: "Dashboard", link: "/admin"},
     {name: "News Feed", link: "/admin/news"},
     {name: "Content", link: "/admin/content"}
