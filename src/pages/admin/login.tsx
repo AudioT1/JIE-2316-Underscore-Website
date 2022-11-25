@@ -3,7 +3,7 @@ import styles from "../../styles/pages/HeaderOnly.module.css"
 import Main from "../../components/admin/login/Main"
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { mustNotBeAuthenticated } from "../../utils/admin-auth";
-import AdminHeader from "../../components/nav/Admin Header";
+import AdminHeader from "../../components/nav/AdminBareHeader";
 
 export default function Login() {
 
