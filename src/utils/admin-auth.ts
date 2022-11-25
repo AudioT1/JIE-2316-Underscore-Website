@@ -1,8 +1,17 @@
-import { GetServerSidePropsContext} from "next";
+import { GetServerSidePropsContext, NextApiHandler, NextApiRequest, NextApiResponse} from "next";
 import { parseCookies } from "nookies";
 import { C_AdminData } from "../database/interfaces/Admin";
 import jwt from "jsonwebtoken"
 import { getAdminFromUsername } from "../database/operations/admin";
+
+function getDecoded(auth:string) {
+    return new Promise<C_AdminData|null>((resolve, reject) => {
+        jwt.verify(auth, process.env.JWT_TOKEN_SIGNATURE, (err, decoded) => {
+            if (!err && decoded) resolve(decoded as C_AdminData)
+            resolve(null)
+        })
+    })
+}
 
 export async function getAuthToken(ctx:GetServerSidePropsContext) {
 
@@ -10,12 +19,15 @@ export async function getAuthToken(ctx:GetServerSidePropsContext) {
 
     if (!auth) return null
 
-    return new Promise<C_AdminData|null>((resolve, reject) => {
-        jwt.verify(auth, process.env.JWT_TOKEN_SIGNATURE, (err, decoded) => {
-            if (!err && decoded) resolve(decoded as C_AdminData)
-            resolve(null)
-        })
-    })
+    return await getDecoded(auth)
+}
+
+export async function getAuthTokenFromAPIHandler(req:NextApiRequest) {
+    const auth = req.cookies["admin-auth"]
+
+    if (!auth) return null
+
+    return await getDecoded(auth)
 }
 
 export async function mustNotBeAuthenticated(ctx:GetServerSidePropsContext) {
@@ -27,6 +39,27 @@ export async function mustNotBeAuthenticated(ctx:GetServerSidePropsContext) {
     }
 
     return {props: {}, redirect: {destination: "/admin"}}
+}
+
+export function verifyAdmin(fn:NextApiHandler) {
+    return (req:NextApiRequest, res:NextApiResponse) => {
+        return new Promise<void>(resolve => {
+            getAuthTokenFromAPIHandler(req).then(async (token) => {
+                if (!token) {
+                    res.status(403).json({msg: "YOU CANNOT PASS"})
+                    return resolve()
+                }
+                if (req.method !== "GET") {
+                    req.body.jwtAdmin = token
+                }
+                await fn(req, res)
+                return resolve()
+            }).catch(() => {
+                res.status(500).json({msg: "Internal Server Error"})
+                return resolve()
+            })
+        })
+    }
 }
 
 export async function getAdmin(ctx:GetServerSidePropsContext) {

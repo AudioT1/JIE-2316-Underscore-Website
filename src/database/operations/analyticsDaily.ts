@@ -1,7 +1,9 @@
 import { query as q } from "faunadb"
+import client from "../fauna"
 import dayjs from "dayjs"
+import { S_AnalyticsDaily } from "../interfaces/AnalyticsDaily"
 
-function getAnalyticsDaily(date:string) {
+function getAnalyticsDailyInnerQuery(date:string) {
     const qDate = q.Date(date)
     return q.If(
         q.Exists(q.Match(q.Index("analyticsDaily_by_date"), qDate)),
@@ -19,7 +21,7 @@ export function incrementAnalyticsDailyInnerQuery(page:string) {
 
     return q.Let(
         {
-            analytics: getAnalyticsDaily(date)
+            analytics: getAnalyticsDailyInnerQuery(date)
         },
         q.Update(q.Select("ref", q.Var("analytics")), {data: {
             pageVisitFrequencies: {
@@ -31,4 +33,11 @@ export function incrementAnalyticsDailyInnerQuery(page:string) {
             }
         }})
     )
+}
+
+export async function getAnalyticsDaily(date:string) {
+
+    return await client.query(
+        getAnalyticsDailyInnerQuery(date)
+    ) as S_AnalyticsDaily
 }
