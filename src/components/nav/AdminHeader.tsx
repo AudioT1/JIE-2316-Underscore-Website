@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function AdminHeader() {
 
     const theme = useTheme()
-    const isBelowMaxScreenSize = useMediaQuery(theme.breakpoints.down("md"))
+    const isBelowMaxScreenSize = useMediaQuery("(max-width:1099px)")
 
     const [drawerIsOpen, setDrawerIsOpen] = useState(false)
 

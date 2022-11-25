@@ -11,7 +11,7 @@ export const sections = [
 export default function AdminSidebar() {
 
     const theme = useTheme()
-    const isAboveMinScreenSize = useMediaQuery(theme.breakpoints.up("md"))
+    const isAboveMinScreenSize = useMediaQuery("(min-width:1100px)")
 
     if (!isAboveMinScreenSize) {
         return <div />

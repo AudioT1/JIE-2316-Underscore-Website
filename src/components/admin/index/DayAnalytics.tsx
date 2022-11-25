@@ -1,13 +1,42 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useMemo } from "react"
-import { Box, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Backdrop, Box, CircularProgress, Grid, Paper, TextField, Typography } from "@mui/material";
 import dayjs from "dayjs";
 import { useState } from "react";
 import { DailyAnalyticsBank } from "./Main";
 import axios from "axios";
+import { Bar } from "react-chartjs-2"
 
 interface Props {
     bank: DailyAnalyticsBank;
     setBank: Dispatch<SetStateAction<DailyAnalyticsBank>>
+}
+
+const pageNames = {
+    "Home": "/",
+    "About Us": "/about-us",
+    "Our Mission": "/our-mission",
+    "Contact Us": "/contact-us",
+}
+
+const chartOptions = {
+    responseive: true,
+    scales: {
+        x: {
+            title: {
+                display: true,
+                text: "Page"
+            }
+        },
+        y: {
+            title: {
+                display: true,
+                text: "Views"
+            },
+            ticks: {
+                precision: 0
+            }
+        }
+    }
 }
 
 export default function DayAnalytics({bank, setBank}:Props) {
@@ -45,10 +74,34 @@ export default function DayAnalytics({bank, setBank}:Props) {
 
     console.log(analytics)
 
+    const data = useMemo(() => {
+        
+        if (!analytics) {
+            return {
+                labels: [],
+                datasets: []
+            }
+        }
+
+        const labels = Object.keys(pageNames)
+        
+        return {
+            labels,
+            datasets: [
+                {
+                    data: labels.map(label => (
+                        analytics.data.pageVisitFrequencies[pageNames[label as keyof typeof pageNames]] || 0
+                    )),
+                    backgroundColor: "#ba8d69"
+                }
+            ]
+        }
+    }, [analytics])
+
     return (
-        <Box maxWidth={800}>
+        <Box maxWidth="min(800px, 95vw)">
             <Paper>
-                <Box p={3}>
+                <Box p={3} sx={{position: "relative"}}>
                     <Box my={3}>
                         <Grid container alignItems="end" spacing={3}>
                             <Grid item>
@@ -62,6 +115,12 @@ export default function DayAnalytics({bank, setBank}:Props) {
                             </Grid>
                         </Grid>
                     </Box>
+                    <Box my={3}>
+                        <Bar data={data} options={chartOptions}  />
+                    </Box>
+                    <Backdrop sx={{position: "absolute", borderRadius: 1}} open={!data}>
+                        <CircularProgress size={80} />
+                    </Backdrop>
                 </Box>
             </Paper>
         </Box>
