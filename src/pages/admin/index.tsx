@@ -5,6 +5,8 @@ import { getAdmin } from "../../utils/admin-auth";
 import styles from "../../styles/pages/HeaderSidebar.module.css"
 import AdminSidebar from "../../components/nav/AdminSidebar";
 import AdminHeader from "../../components/nav/AdminHeader";
+import Main from "../../components/admin/index/Main";
+import { Box } from "@mui/material";
 
 interface Props {
     admin: C_Admin;
@@ -21,7 +23,7 @@ export default function Admin({admin}:Props) {
                 <AdminHeader />
                 <AdminSidebar />
                 <div>
-                    main
+                    <Main admin={admin} />
                 </div>
             </div>
         </>
