@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import dayjs, { Dayjs } from "dayjs";
-import { useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { BeigePrimaryDenseButton } from "../../misc/buttons";
 
 interface Props {
@@ -10,11 +10,20 @@ interface Props {
 
 export default function Update({onClick, lastUpdated}:Props) {
 
-    const minutesAgo = useMemo(() => {
-        if (!lastUpdated) {
-            return 0
-        }
-        return dayjs().diff(lastUpdated, "minutes")
+    const [minutesAgo, setMinutesAgo] = useState(0)
+
+    const updateMinutes = () => {
+        if (!lastUpdated) return
+        setMinutesAgo(dayjs().diff(lastUpdated, "minutes"))
+    }
+
+    useEffect(() => {
+        updateMinutes()
+        const interval = setInterval(() => {
+            updateMinutes()
+        }, 20000)
+
+        return () => clearInterval(interval)
     }, [lastUpdated])
 
     return (

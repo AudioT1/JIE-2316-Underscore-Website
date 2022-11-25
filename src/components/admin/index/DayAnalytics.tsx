@@ -45,6 +45,7 @@ export default function DayAnalytics({bank, setBank}:Props) {
     const [date, setDate] = useState(dayjs().format("YYYY-MM-DD"))
 
     const analytics = useMemo(() => bank.data[date]?.data, [date, bank])
+    const lastUpdated = useMemo(() => bank.data[date]?.timeUpdated, [date, bank])
 
     const updateDayAnalytics = useCallback(async (date:string) => {
         try {
@@ -73,7 +74,12 @@ export default function DayAnalytics({bank, setBank}:Props) {
 
     }, [date])
 
-    console.log(analytics)
+    const update = async () => {
+
+        setBank({data: {...bank.data, [date]: {...bank.data[date], status: "updating"}}})
+
+        updateDayAnalytics(date)
+    }
 
     const data = useMemo(() => {
         
@@ -120,9 +126,10 @@ export default function DayAnalytics({bank, setBank}:Props) {
                         <Bar data={data} options={chartOptions}  />
                     </Box>
                     <Box>
-                        <Update onClick={() => {}} lastUpdated={bank.data[date]?.timeUpdated} />
+                        <Update onClick={() => update()} lastUpdated={lastUpdated} />
                     </Box>
-                    <Backdrop sx={{position: "absolute", borderRadius: 1}} open={!analytics}>
+                    <Backdrop sx={{position: "absolute", borderRadius: 1}} 
+                        open={!analytics || bank.data[date]?.status === "updating"}>
                         <CircularProgress size={80} />
                     </Backdrop>
                 </Box>
