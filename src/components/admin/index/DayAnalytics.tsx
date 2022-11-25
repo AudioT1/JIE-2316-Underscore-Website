@@ -5,6 +5,7 @@ import { useState } from "react";
 import { DailyAnalyticsBank } from "./Main";
 import axios from "axios";
 import { Bar } from "react-chartjs-2"
+import Update from "./Update";
 
 interface Props {
     bank: DailyAnalyticsBank;
@@ -118,7 +119,10 @@ export default function DayAnalytics({bank, setBank}:Props) {
                     <Box my={3}>
                         <Bar data={data} options={chartOptions}  />
                     </Box>
-                    <Backdrop sx={{position: "absolute", borderRadius: 1}} open={!data}>
+                    <Box>
+                        <Update onClick={() => {}} lastUpdated={bank.data[date]?.timeUpdated} />
+                    </Box>
+                    <Backdrop sx={{position: "absolute", borderRadius: 1}} open={!analytics}>
                         <CircularProgress size={80} />
                     </Backdrop>
                 </Box>
