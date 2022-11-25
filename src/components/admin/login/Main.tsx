@@ -4,7 +4,7 @@ import LoginForm from "./LoginForm";
 export default function Main() {
     
     return (
-        <Box maxWidth="sm" mx="auto" mt={5}>
+        <Box maxWidth="sm" mx="auto">
             <Paper elevation={5}>
                 <Box py={3} mx={3}>
                     <Box textAlign="center" my={3}>

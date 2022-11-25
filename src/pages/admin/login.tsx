@@ -3,6 +3,7 @@ import styles from "../../styles/pages/HeaderOnly.module.css"
 import Main from "../../components/admin/login/Main"
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { mustNotBeAuthenticated } from "../../utils/admin-auth";
+import AdminHeader from "../../components/nav/Admin Header";
 
 export default function Login() {
 
@@ -12,9 +13,7 @@ export default function Login() {
                 <title>Admin Login</title>   
             </Head> 
             <div className={styles.root}>
-                <div>
-                    admin header
-                </div>
+                <AdminHeader />
                 <div>
                     <Main />
                 </div>
