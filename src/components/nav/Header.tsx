@@ -12,7 +12,7 @@ export default function Header() {
     <Box mb={3}>
       <AppBar position="static" sx={{backgroundColor: "secondaryBg.header"}}>
           <Toolbar>
-          <Grid container spacing={0} alignItems="center" direction="row">
+            <Grid container spacing={0} alignItems="center" direction="row">
               <Grid item>
                 <Typography variant="h4" color="orange">
                     <Link href="/" >audioT</Link>
@@ -41,7 +41,7 @@ export default function Header() {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item mx={3}>
+              <Grid item mx={3} my={1}>
                 <Link href="/contact-us">
                   <OrangePrimaryButton>
                     Contact Us
