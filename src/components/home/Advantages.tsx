@@ -112,7 +112,26 @@ export default function Advantages() {
                                                 originated from, such as a disease entering the house.
                                             </Typography>
                                         </Box>
-                                    </> : <></>}
+                                    </> : <>
+                                        <Box my={2}>
+                                            <Typography variant="h6">
+                                                At each stage in the chicken's quick development,
+                                                chickens will be expected to make different sounds for 
+                                                different periods of time.
+                                            </Typography>
+                                        </Box>
+                                        <Box my={2}>
+                                            <Typography variant="h6">
+                                                With this understanding, AudioT can compare actual sounds of the 
+                                                chickens with predicted sounds for their stage of development.
+                                            </Typography>
+                                        </Box>
+                                        <Box my={2}>
+                                            <Typography variant="h6">
+                                                If something appears unusual, AudioT can alert the farmer.
+                                            </Typography>
+                                        </Box>
+                                    </>}
                                 </Box>
                             </Paper>
                         </Grid>
@@ -120,9 +139,9 @@ export default function Advantages() {
                             <Box>
                                 <img src={optionSelected === 0 ? 
                                     "/chicken-anomalies.png" : optionSelected === 1 ?
-                                    "/chicken-zones.png" : ""}
+                                    "/chicken-zones.png" : "/chicken-tracking-outcomes.png"}
                                     style={{aspectRatio: optionSelected === 0 ? '1/1' : 
-                                        optionSelected === 1 ? '3/2' : '1/1', 
+                                        optionSelected === 1 ? '3/2' : '3/1', 
                                         width: '100%', height: 'auto'}} />
                             </Box>
                         </Grid>
