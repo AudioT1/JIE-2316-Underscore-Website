@@ -115,7 +115,7 @@ export default function Advantages() {
                                     </> : <>
                                         <Box my={2}>
                                             <Typography variant="h6">
-                                                At each stage in the chicken's quick development,
+                                                At each stage in the chicken&#39;s quick development,
                                                 chickens will be expected to make different sounds for 
                                                 different periods of time.
                                             </Typography>
