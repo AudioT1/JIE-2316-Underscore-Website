@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography, useTheme } from "@mui/material";
+import { Box, Container, Grid, Paper, Typography, useTheme } from "@mui/material";
 import { useState } from "react";
 import { theme } from "../../styles/theme";
 
@@ -73,6 +73,49 @@ export default function Advantages() {
                         </Box>
                     </Grid>
                 </Grid>
+            </Box>
+            <Box mb={6}>
+                <Container maxWidth="lg">
+                    <Grid container spacing={6}>
+                        <Grid item xs={12} md={6}>
+                            <Paper elevation={3}>
+                                <Box p={3}>
+                                    {optionSelected === 0 ? <>
+                                        <Box my={2}>
+                                            <Typography variant="h6">
+                                                Anomaly Detection is the process of searching for changes in chicken vocalizations
+                                                over time that are different than expected.
+                                            </Typography>
+                                        </Box>
+                                        <Box my={2}>
+                                            <Typography variant="h6">
+                                                If notable anomalies occur, farmers will receive an alert allowing them 
+                                                to respond quickly.
+                                            </Typography>
+                                        </Box>
+                                        <Box my={2}>
+                                            <Typography variant="h6">
+                                                Darkness of squares indicates how unusual events were at a certain period of time
+                                                in a certain zone of the house.
+                                            </Typography>
+                                        </Box>
+                                    </> : optionSelected === 1 ? <>
+                                        <Box my={2}>
+
+                                        </Box>
+                                    </> : <></>}
+                                </Box>
+                            </Paper>
+                        </Grid>
+                        <Grid item sx={{maxWidth: 450}} flex={1}>
+                            <Box>
+                                <img src={optionSelected === 0 ? 
+                                    "/chicken-anomalies.png" : ""}
+                                    style={{aspectRatio: '1/1', width: '100%', height: 'auto'}} />
+                            </Box>
+                        </Grid>
+                    </Grid>     
+                </Container>
             </Box>
         </Box>
     )
