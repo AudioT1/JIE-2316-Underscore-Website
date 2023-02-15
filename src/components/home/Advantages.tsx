@@ -101,7 +101,16 @@ export default function Advantages() {
                                         </Box>
                                     </> : optionSelected === 1 ? <>
                                         <Box my={2}>
-
+                                            <Typography variant="h6">
+                                                Zones allow farmers to pin-point where specific issues are in the 
+                                                house.
+                                            </Typography>
+                                        </Box>
+                                        <Box my={2}>
+                                            <Typography variant="h6">
+                                                They can also help farmers understand where an problem in the house 
+                                                originated from, such as a disease entering the house.
+                                            </Typography>
                                         </Box>
                                     </> : <></>}
                                 </Box>
@@ -110,8 +119,11 @@ export default function Advantages() {
                         <Grid item sx={{maxWidth: 450}} flex={1}>
                             <Box>
                                 <img src={optionSelected === 0 ? 
-                                    "/chicken-anomalies.png" : ""}
-                                    style={{aspectRatio: '1/1', width: '100%', height: 'auto'}} />
+                                    "/chicken-anomalies.png" : optionSelected === 1 ?
+                                    "/chicken-zones.png" : ""}
+                                    style={{aspectRatio: optionSelected === 0 ? '1/1' : 
+                                        optionSelected === 1 ? '3/2' : '1/1', 
+                                        width: '100%', height: 'auto'}} />
                             </Box>
                         </Grid>
                     </Grid>     
