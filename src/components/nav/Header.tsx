@@ -19,13 +19,15 @@ export default function Header() {
                 src="/audiotlogo.png" />
               </Grid>
               <Grid item>
-                <Typography variant="h4" color="#f57c00">
-                    <Link href="/" >audioT</Link>
-                </Typography>
+                <Box sx={{ pl: 2.5 }}>
+                  <Typography variant="h4" color="#f57c00">
+                      <Link href="/" >audioT</Link>
+                  </Typography>
+                </Box>
               </Grid>
               <Grid item flex={1} />
               <Grid item mx={3}>
-                <Box  sx={{ width:'50', height:'3', p: 2 }} borderRadius={3}>
+                <Box sx={{ width:'50', height:'3', p: 2 }} borderRadius={3}>
                   <Typography variant="body1" color="text.primary">
                         <Link href="/our-mission">Our Mission</Link>
                       </Typography>
