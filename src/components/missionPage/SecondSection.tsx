@@ -11,7 +11,7 @@ export default function SecondSection() {
     const xlScreen =  useMediaQuery(theme.breakpoints.down('xl'))
 
     return (
-        <Box  sx={{ background:`linear-gradient(to bottom,#F2F5FA,#9e9e9e)`, height: 2300,backgroundPosition: 'center', backgroundRepeat: 'no-repeat',backgroundSize: 'cover',position: 'relative'}}>
+        <Box  sx={{ background:`linear-gradient(to bottom,#F2F5FA,#9e9e9e)`, height: 2550,backgroundPosition: 'center', backgroundRepeat: 'no-repeat',backgroundSize: 'cover',position: 'relative'}}>
             <Grid container spacing={0} alignItems="center" direction="row">
                     <Grid item >
                         <Box sx={{height: 500}} textAlign="left" >
@@ -74,18 +74,54 @@ export default function SecondSection() {
                                     <Divider  sx={{backgroundColor: 'white'}}>
                                       
                                       </Divider>
+                                      
                                     
                                     
 
                                 </Box>
+                                <Grid container spacing={1} direction={smallScreen? "column": "row"}>
+                                    <Grid item md={6} xs={10}>
+                                        <Box py={smallScreen? 1: medScreen? 30: 40} px={medScreen? 5:smallScreen? 50: 10}>
+                                                <img 
+                                                style={{aspectRatio: '1/1', width:'90%', height: 'auto'}}
+                                                src="/audiotcams1.png" />
+                                        </Box>  
+
+                                    </Grid>
+                                    <Grid item md={6} xs={10}>
+                                    <Typography  width={smallScreen? "100%":"100%"} textAlign="left" pt={smallScreen? 5: medScreen? 15: 35} pb={1} sx={{ letterSpacing: 1 }} variant={smallScreen ? 'h5' : medScreen? "h5": 'h4'} color="secondary.main">
+                                             Setting a New Welfare Standard
+                                        </Typography>
+                                        <Typography  pr={medScreen? 0:smallScreen? 0:10} width={smallScreen? "100%":"100%"} textAlign="left" pt={3} pb={1} sx={{ letterSpacing: 1 }} variant={smallScreen ? 'body2' : medScreen? "body2": 'body1'} color="secondary.main">
+                                        Currently, common welfare practices for taking care of chickens include regulating environmental 
+                                        factors such as temperature and tracking water and feed consumption. These types of statistics are
+                                        helpful to gain some insight into how a house is functioning as a whole, they do a poor job in actively 
+                                        monitoring the animals. For example, when looking solely at the aggregate water consumption of a house, 
+                                        there isn’t a way to tell whether all the birds are hydrated properly or if some are drinking too much or 
+                                        too little.
+                                        </Typography>
+                                        <Typography pr={medScreen? 0:smallScreen? 0:10} width={smallScreen? "100%":"100%"} textAlign="left" pt={3} pb={1} sx={{ letterSpacing: 1 }} variant={smallScreen ? 'body2' :  medScreen? "body2":'body1'} color="secondary.main">
+                                        Recent advancements in the agricultural technology community have led to the creation of new, 
+                                        more powerful welfare monitoring systems for poultry farmers, which utilize machine learning 
+                                        to gather and organize welfare data. Camera-based solutions have been making waves in the industry: 
+                                        they’re a step in the right direction, but cameras are expensive to implement and aren’t optimal 
+                                        for monitoring every type of welfare outcome.
+                                        </Typography>
+
+
+
+                                    </Grid>
+                                </Grid>
                             </Grid>
 
                         </Box>
+
+                        
                         
                     </Grid>
                     
-                    
                 </Grid>
+               
         </Box>
     )
 }
