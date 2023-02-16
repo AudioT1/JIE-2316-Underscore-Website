@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import FirstSection from "./FirstSection";
 import SecondSection from "./SecondSection";
+import ThirdSection from "./ThirdSection";
 
 export default function Composite() {
 
@@ -9,6 +10,7 @@ export default function Composite() {
             
             <FirstSection />
             <SecondSection />
+            <ThirdSection />
             
         </Box>
     )
