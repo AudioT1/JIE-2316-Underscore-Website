@@ -17,7 +17,7 @@ export default function AboutUs() {
                 <Composite />
                 
                 <div>
-                    Our Mission page
+                    Social media
             
                 </div>
             </div>
