@@ -15,11 +15,6 @@ export default function AboutUs() {
             <div>
                 <Header />
                 <Composite />
-                
-                <div>
-                    Social media
-            
-                </div>
             </div>
         </>
     )

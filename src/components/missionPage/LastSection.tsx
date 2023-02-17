@@ -42,7 +42,6 @@ export default function SecondSection() {
                             style={{aspectRatio: '1/1', width:'90%', height: 'auto'}}
                             src="missionpageimage3.png" />
                         </Box>  
-                    
                  </Grid>
             </Grid>
 
