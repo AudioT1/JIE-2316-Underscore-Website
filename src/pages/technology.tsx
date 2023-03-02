@@ -6,12 +6,12 @@ import Composite from "../components/TechPage/Composite"
 
 export default function Technology() {
 
-    useAnalytics("/our-mission")
+    useAnalytics("/technology")
 
     return (
         <>
             <Head>
-                <title>Our Mission</title>     
+                <title>Technology</title>     
             </Head> 
             <div>
                 <Header />
