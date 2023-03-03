@@ -1,4 +1,4 @@
-import { Box, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Paper, useTheme, useMediaQuery } from "@mui/material";
 import InfoSidebar from "./InfoSidebar"
 import MessageForm from "./MessageForm"
 
@@ -11,18 +11,21 @@ export default function ContactBox() {
     return (
         <Box sx={{
             backgroundColor: 'background.default',
-            pt: 6,
-            pb: 6,
-            pl: 20,
-            pr: 20,
-            height: 1000
+            py: 12,
         }}>
-            <Box sx={{ 
-                display: 'flex',
+            <Paper sx={{ 
+                elevation: 10,
+                mx: 'auto',
+                maxWidth: 'xl',
             }}>
-                <InfoSidebar/>
-                <MessageForm/>
-            </Box>
+                <Box sx={{ 
+                    display: 'flex',
+                    borderRadius: '70%'
+                }}>
+                    <InfoSidebar/>
+                    <MessageForm/>
+                </Box>
+            </Paper>
         </Box>
     )
 }

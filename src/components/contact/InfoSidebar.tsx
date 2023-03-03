@@ -8,11 +8,12 @@ export default function ContactBox() {
 
     return (
         <Box sx={{
+            py: 5,
             backgroundColor: 'secondary.main',
-            alignItems: 'center',
-            justifyContent: 'center'
+            textAlign: 'center',
+            maxWidth: 'sm'
         }}>
-            <Typography py={0} sx={{ fontWeight: 'bold', letterSpacing: 1 }} variant={smallScreen ? 'h4' : 'h2'} color="primary.main">
+            <Typography py={2} sx={{ fontWeight: 'bold', letterSpacing: 1 }} variant={smallScreen ? 'h4' : 'h2'} color="primary.main">
                 CONTACT US
             </Typography>
             <Box sx={{ 
@@ -25,11 +26,11 @@ export default function ContactBox() {
                 position: 'relative',
                 margin: 'auto'}}>
             </Box>
-            <Typography>
+            <Typography pt={5} color='#FFFFFF' variant={smallScreen ? 'h6' : 'h4'}>
                 Get in touch!
             </Typography>
-            <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={6}>
+            <Grid container rowSpacing={3} columnSpacing={{ xs: 0.5, sm: 2, md: 3 }} px={14} pt={5}>
+                <Grid item xs={4}>
                     <Box sx={{ 
                         backgroundImage: 'url(/location.svg)',
                         margin: 'auto',
@@ -41,15 +42,15 @@ export default function ContactBox() {
                         position: 'relative'}}>
                     </Box>
                 </Grid>
-                <Grid item xs={6}>
-                    <Typography>
+                <Grid item xs={8}>
+                    <Typography color='#FFFFFF' textAlign='left'>
                         AudioT Corporate Headquarters
                     </Typography>
-                    <Typography>
+                    <Typography color='#FFFFFF' textAlign='left'>
                         Atlanta, GA
                     </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={4}>
                     <Box sx={{ 
                         backgroundImage: 'url(/mail.svg)',
                         margin: 'auto',
@@ -61,12 +62,12 @@ export default function ContactBox() {
                         position: 'relative'}}>
                     </Box>
                 </Grid>
-                <Grid item xs={6}>
-                    <Typography>
+                <Grid item xs={8}>
+                    <Typography color='#FFFFFF' textAlign='left'>
                         contact@audiot.com
                     </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={4}>
                     <Box sx={{ 
                         backgroundImage: 'url(/phone.svg)',
                         margin: 'auto',
@@ -78,8 +79,8 @@ export default function ContactBox() {
                         position: 'relative'}}>
                     </Box>
                 </Grid>
-                <Grid item xs={6}>
-                    <Typography>
+                <Grid item xs={8}>
+                    <Typography color='#FFFFFF' textAlign='left'>
                         123-456-7890
                     </Typography>
                 </Grid>
