@@ -11,12 +11,16 @@ export default function ContactBox() {
     return (
         <Box sx={{
             backgroundColor: 'background.default',
-            py: 12,
+            width: '100vw',
+            height: '94vh',
+            py: 10
         }}>
             <Paper sx={{ 
                 elevation: 5,
                 mx: 'auto',
-                maxWidth: 'xl'
+                maxWidth: 'xl',
+                borderRadius: '4vh',
+                overflow: 'hidden'
             }}>
                 <Box sx={{ 
                     display: 'flex'
