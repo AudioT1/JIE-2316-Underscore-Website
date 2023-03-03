@@ -14,13 +14,12 @@ export default function ContactBox() {
             py: 12,
         }}>
             <Paper sx={{ 
-                elevation: 10,
+                elevation: 5,
                 mx: 'auto',
-                maxWidth: 'xl',
+                maxWidth: 'xl'
             }}>
                 <Box sx={{ 
-                    display: 'flex',
-                    borderRadius: '70%'
+                    display: 'flex'
                 }}>
                     <InfoSidebar/>
                     <MessageForm/>
