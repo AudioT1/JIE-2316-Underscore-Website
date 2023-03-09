@@ -63,7 +63,8 @@ export default function ContactBox() {
                             </Grid>
                             <Grid item xs={12}>
                                 <FormGroup>
-                                    <FormikTextField name="message" label="Message" />
+                                    <FormikTextField name="message" label="Message"
+                                        multiline rows={6} />
                                 </FormGroup>
                             </Grid>
                         </Grid>
