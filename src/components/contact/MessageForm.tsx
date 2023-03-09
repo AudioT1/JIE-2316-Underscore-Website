@@ -4,6 +4,7 @@ import { object, string } from "yup"
 import FormikTextField from "../formik/TextField"
 import { OrangePrimaryButton } from "../misc/buttons"
 import axios from "axios";
+import Router from "next/router"
 
 interface FormVals {
     first: string;
@@ -26,9 +27,6 @@ export default function ContactBox() {
     }
 
     const onSubmit = async (vals:FormVals, actions:FormikHelpers<FormVals>) => {
-        console.log(vals);
-        console.log(actions);
-
         try {
 
             await axios({
@@ -36,6 +34,8 @@ export default function ContactBox() {
                 url: '/api/contact-us/submit',
                 data: {data: vals}
             })
+
+            Router.push('/contact-us/success')
         } catch (e) {
             console.log(e)
         }
