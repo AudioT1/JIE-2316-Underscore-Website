@@ -23,8 +23,8 @@ export default function SecondSection() {
     }
 
     return (
-        <Box pt={0} pb={3} textAlign="center" sx={{ background:`linear-gradient(to bottom,#F2F5FA,#9e9e9e)`,backgroundPosition: 'center', backgroundRepeat: 'no-repeat',backgroundSize: 'cover',position: 'relative'}}>
-           <Box mt={20} >
+        <Box pt={0} pb={3} textAlign="center" sx={{ backgroundColor:"text.primary",backgroundPosition: 'center', backgroundRepeat: 'no-repeat',backgroundSize: 'cover',position: 'relative'}}>
+           <Box  pt={10}>
                 <Typography variant={medScreen ? 'h3' : 'h2'} color="primary.main" >
                         System Overview
                     </Typography> 
