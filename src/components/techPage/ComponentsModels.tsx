@@ -34,22 +34,22 @@ export default function ComponentsModels() {
                     <img 
                         style={{aspectRatio: '11/9', width:'40%', height: 'auto'}}
                         src="/babyChick.png" />
-                        <Typography pb={5}  sx={{ fontWeight: 'bold' }} variant={medScreen ? 'h4' : 'h3'} color="black" >
+                        <Typography pb={5} pt={3} pl={3}  sx={{letterSpacing: 3, fontWeight: 'bold' }} variant={medScreen ? 'h4' : 'h3'} color="black" >
                                 YOUNG
                         </Typography> 
-                        <Typography   py={2} pl={medScreen? 0:5}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
+                        <Typography   py={2} pl={medScreen? 0:6}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
                             Distess
                         </Typography> 
-                        <Typography  py={2} pl={medScreen? 0:5} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
+                        <Typography  py={2} pl={medScreen? 0:6} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
                             Day
                         </Typography> 
-                        <Typography   py={2} pl={medScreen? 0:5} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
+                        <Typography   py={2} pl={medScreen? 0:6} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
                             Night
                         </Typography> 
-                        <Typography  py={2} pl={medScreen? 0:5}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
+                        <Typography  py={2} pl={medScreen? 0:6}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
                             Water
                         </Typography> 
-                        <Typography   py={2}pl={medScreen? 0:5} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
+                        <Typography   py={2}pl={medScreen? 0:6} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
                             Anomaly
                         </Typography> 
 
@@ -60,7 +60,7 @@ export default function ComponentsModels() {
                     <img 
                         style={{aspectRatio: '11/9', width:'40%', height: 'auto'}}
                         src="/midChick.png" />
-                        <Typography pb={5}  sx={{ fontWeight: 'bold' }} variant={medScreen ? 'h4' : 'h3'} color="black"  >
+                        <Typography pb={5} pt={3} pl={3} sx={{ letterSpacing: 3,fontWeight: 'bold' }} variant={medScreen ? 'h4' : 'h3'} color="black"  >
                                 MID
                         </Typography> 
                         <Typography   py={2} pl={medScreen? 0:6}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
@@ -87,22 +87,22 @@ export default function ComponentsModels() {
                     <img 
                         style={{aspectRatio: '11/9', width:'40%', height: 'auto'}}
                         src="/bigChick.png" />
-                        <Typography  pb={5} sx={{ fontWeight: 'bold' }} variant={medScreen ? 'h4' : 'h3'} color="black">
+                        <Typography  pb={5} pt={3} pl={3}  sx={{ letterSpacing: 3,fontWeight: 'bold' }} variant={medScreen ? 'h4' : 'h3'} color="black">
                                 LATE
                         </Typography> 
-                        <Typography   py={2} pl={medScreen? 0:5} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
+                        <Typography   py={2} pl={medScreen? 0:6} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
                             Distess
                         </Typography> 
-                        <Typography  py={2} pl={medScreen? 0:5}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
+                        <Typography  py={2} pl={medScreen? 0:6}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
                             Day
                         </Typography> 
-                        <Typography   py={2} pl={medScreen? 0:5}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
+                        <Typography   py={2} pl={medScreen? 0:6}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
                             Night
                         </Typography> 
-                        <Typography  py={2}  pl={medScreen? 0:5}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
+                        <Typography  py={2}  pl={medScreen? 0:6}  textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black">
                             Water
                         </Typography> 
-                        <Typography   py={2} pl={medScreen? 0:5} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
+                        <Typography   py={2} pl={medScreen? 0:6} textAlign="left" mx={smallScreen? 15:10}   variant={medScreen ? 'h4' : 'h3'} color="black" >
                             Anomaly
                         </Typography> 
 
