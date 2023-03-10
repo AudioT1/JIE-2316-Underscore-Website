@@ -25,7 +25,7 @@ export default function SecondSection() {
     return (
         <Box pt={0} pb={3} textAlign="center" sx={{ backgroundColor:"text.primary",backgroundPosition: 'center', backgroundRepeat: 'no-repeat',backgroundSize: 'cover',position: 'relative'}}>
            <Box  pt={10}>
-                <Typography variant={medScreen ? 'h3' : 'h2'} color="primary.main" >
+                <Typography sx={{ letterSpacing: 1 }} variant={medScreen ? 'h3' : 'h2'} color="primary.main" >
                         System Overview
                     </Typography> 
             </Box>

@@ -24,14 +24,13 @@ export default function ComponentsModels() {
 
     return (
         <Box >
-            <Typography  py={0} sx={{ fontWeight: 'bold' }} my={15} variant={medScreen ? 'h3' : 'h2'} color="secondary.main" textAlign="center">
+            <Typography  py={10} sx={{ fontWeight: 'bold' }} variant={medScreen ? 'h3' : 'h2'} color="secondary.main" textAlign="center">
                 Components And Models
             </Typography> 
             <Grid container spacing={12} direction="row" >
                 <Grid item md={4} xs={12}>
                     <Box textAlign="center">
                     
-
                     <img 
                         style={{aspectRatio: '11/9', width:'40%', height: 'auto'}}
                         src="/babyChick.png" />
@@ -84,7 +83,7 @@ export default function ComponentsModels() {
 
             </Grid>
             <Grid item md={4} xs={12}>
-            <Box mt={smallScreen? 15:0} textAlign="center" pb={15}>
+                <Box mt={smallScreen? 15:0} textAlign="center" pb={10}>
                     <img 
                         style={{aspectRatio: '11/9', width:'40%', height: 'auto'}}
                         src="/bigChick.png" />
@@ -110,8 +109,37 @@ export default function ComponentsModels() {
                     </Box>
 
             </Grid>
-
-
+            
+         </Grid>
+         <Grid container spacing={12} direction="row" >
+            <Grid item md={3} >
+                    <Box mt={smallScreen? 15:0} textAlign="center" >
+                        <img 
+                            style={{aspectRatio: '11/9', width:'auto', height: 'auto'}}
+                            src="/sun.png" />
+                    </Box>
+            </Grid>
+            <Grid item md={3} >
+                    <Box mt={smallScreen? 15:0} textAlign="center" >
+                        <img 
+                            style={{ width:'auto', height: 'auto'}}
+                            src="/moon.png" />
+                    </Box>
+            </Grid>
+            <Grid item md={3} >
+                    <Box mt={smallScreen? 15:0} textAlign="center">
+                        <img 
+                            style={{aspectRatio: '11/9', width:'auto', height: 'auto'}}
+                            src="/water.png" />
+                    </Box>
+            </Grid>
+            <Grid item md={3} >
+                    <Box mt={smallScreen? 15:0} textAlign="center" pb={10}>
+                        <img 
+                            style={{aspectRatio: '11/9', width:'auto', height: 'auto'}}
+                            src="/search.png" />
+                    </Box>
+            </Grid>
             
          </Grid>
         
