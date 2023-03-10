@@ -111,7 +111,7 @@ export default function ComponentsModels() {
             </Grid>
             
          </Grid>
-         <Grid container spacing={12} direction="row" >
+         <Grid container spacing={12} direction={smallScreen? "column":"row"} >
             <Grid item md={3} >
                     <Box mt={smallScreen? 15:0} textAlign="center" >
                         <img 
