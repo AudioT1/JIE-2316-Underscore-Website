@@ -15,7 +15,7 @@ export default function SecondSection() {
         <Box pt={0} pb={3} textAlign="center" sx={{ backgroundColor:"text.primary",backgroundPosition: 'center', backgroundRepeat: 'no-repeat',backgroundSize: 'cover',position: 'relative'}}>
            <Box  pt={10} pb={15}>
                 <Typography sx={{ letterSpacing: 1 }} variant={medScreen ? 'h4' : 'h3'} color="primary.main" >
-                        Audio T's Leadership Team
+                        Audio Ts Leadership Team
                     </Typography> 
             </Box>
             <Box>
