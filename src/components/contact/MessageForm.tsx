@@ -19,6 +19,8 @@ interface FormVals {
 
 export default function ContactBox() {
 
+    console.log('site key', process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY)
+
     const theme = useTheme()
     const smallScreen = useMediaQuery(theme.breakpoints.down('md'))
     const medScreen = useMediaQuery(theme.breakpoints.down('lg'))
