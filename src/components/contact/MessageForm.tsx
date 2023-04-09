@@ -42,7 +42,7 @@ export default function ContactBox() {
             await axios({
                 method: 'POST',
                 url: '/api/contact-us/submit',
-                data: {data: vals}
+                data: {data: vals, token}
             })
 
             Router.push('/contact-us/success')
