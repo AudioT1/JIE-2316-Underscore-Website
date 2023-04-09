@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Formik, Form, FormikHelpers } from "formik"
 import { Grid, Box, FormGroup, useTheme, useMediaQuery } from "@mui/material";
 import { object, string } from "yup"
@@ -5,6 +6,9 @@ import FormikTextField from "../formik/TextField"
 import { OrangePrimaryButton } from "../misc/buttons"
 import axios from "axios";
 import Router from "next/router"
+import reCAPTCHA, {ReCAPTCHA} from "react-google-recaptcha"
+
+const RECAPTCHA = reCAPTCHA // typescript gets mad if it doesn't start with capital
 
 interface FormVals {
     first: string;
@@ -19,6 +23,8 @@ export default function ContactBox() {
     const smallScreen = useMediaQuery(theme.breakpoints.down('md'))
     const medScreen = useMediaQuery(theme.breakpoints.down('lg'))
 
+    const captchaRef = useRef<ReCAPTCHA>(null)
+
     const initialValues = {
         first: "",
         last: "",
@@ -27,6 +33,10 @@ export default function ContactBox() {
     }
 
     const onSubmit = async (vals:FormVals, actions:FormikHelpers<FormVals>) => {
+        const token = captchaRef.current?.getValue()
+
+        if (!token) return
+
         try {
 
             await axios({
@@ -79,6 +89,10 @@ export default function ContactBox() {
                                     </FormGroup>
                                 </Grid>
                             </Grid>
+                            <Box my={3} maxWidth={300} mx="auto">
+                                <RECAPTCHA sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}
+                                    ref={captchaRef} />
+                            </Box>
                             <Box my={3} maxWidth={200} mx="auto" textAlign="center">
                                 <OrangePrimaryButton fullWidth type="submit" 
                                     disabled={isSubmitting || isValidating}>
