@@ -24,7 +24,9 @@ export default function AdminSidebar() {
                 <Grid container alignItems="start" direction="column">
                     <Grid item>
                         <Typography variant="h4" color="text.primary">
-                            AudioT
+                            <Link href="/admin">
+                                AudioT
+                            </Link>
                         </Typography>
                     </Grid>
                     <Grid item>
