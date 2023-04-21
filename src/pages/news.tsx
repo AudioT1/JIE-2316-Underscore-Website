@@ -9,7 +9,7 @@ export default function News() {
         <>
             <Head>
                 <title>AudioT News</title>
-                <script src="https://widgets.sociablekit.com/linkedin-page-posts/widget.js" />
+                <script src="https://widgets.sociablekit.com/linkedin-page-posts/widget.js" async />
             </Head> 
             <div>
                 <Header />
