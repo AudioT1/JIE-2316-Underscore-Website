@@ -56,7 +56,8 @@ export default function BirdDev() {
                 </Box>
                 <Box mt={12}>
                     <BirdDevUnit name="Adult Chicken" birdImg="/large-chicken.png" 
-                        videoLink="https://www.youtube.com/embed/70IqKloH-mw" 
+                        // videoLink="https://www.youtube.com/embed/70IqKloH-mw" 
+                        videoLink="/late-stage-clip.mp4"
                         audios={Array(3).fill({
                             img: '/dummy-spectogram.png',
                             audio: '/chicken-alarm.mp3',
