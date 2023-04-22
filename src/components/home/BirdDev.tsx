@@ -19,7 +19,7 @@ export default function BirdDev() {
                             </Typography>
                         </Box>
                         <Box>
-                            <Typography variant="h5">
+                            <Typography variant="h5" color="text.primary" >
                                 At different stages of development, chickens tend to make different 
                                 sounds. AudioT listens for these changes!
                             </Typography>

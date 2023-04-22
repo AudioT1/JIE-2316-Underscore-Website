@@ -14,7 +14,7 @@ export default function Hardware() {
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography variant="h5">
+                                <Typography color="text.primary" variant="h5">
                                     AudioT uses microphones to listen for changes in sounds the chickens
                                     are making. These micrphones are installed throughout the poultry 
                                     houses to provide the farmer with more complete welfare monitoring.
