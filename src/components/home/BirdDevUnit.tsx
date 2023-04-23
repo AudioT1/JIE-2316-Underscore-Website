@@ -124,7 +124,7 @@ export default function BirdDevUnit({name, birdImg, videoLink,
                         </Box>
                     </Box>
                     <Box mt={3} pb={3}
-                        sx={{overflowX: 'auto', scrollSnapType: 'x mandatory'}}>
+                        sx={{overflowX: 'auto', scrollSnapType: 'x mandatory', maxWidth: '100vw'}}>
                         <Grid container spacing={3} wrap="nowrap">
                             {audios.map((audio, i) => (
                                 <Grid item key={i} sx={{scrollSnapAlign: 'start'}}>
