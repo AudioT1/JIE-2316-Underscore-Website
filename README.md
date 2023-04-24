@@ -7,6 +7,9 @@ Previous development on the website was done inside the AudioT1 organization. Wh
 * WRONG REPO: https://github.com/AudioT1/JIE-2316-Underscore-Website
 * CORRECT REPO: https://github.com/audiot-dev/JIE-2316-Underscore-Website
 
+## Installation Guide
+The installation guide can be found [here](/InstallGuide.md).
+
 ## Version History:
 
 * [v1.0.0](#v100)
